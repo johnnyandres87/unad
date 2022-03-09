@@ -1,2 +1,0 @@
-# unad
-Desarrollos UNAD

@@ -1,0 +1,17 @@
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.csproj.AssemblyReference.cache
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.csproj.GenerateResource.cache
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.GeneratedMSBuildEditorConfig.editorconfig
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.AssemblyInfoInputs.cache
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.AssemblyInfo.cs
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.csproj.CoreCompileInputs.cache
+D:\Johnny\C#\HotelUnad\HotelUnad\bin\Debug\netcoreapp3.1\HotelUnad.exe
+D:\Johnny\C#\HotelUnad\HotelUnad\bin\Debug\netcoreapp3.1\HotelUnad.deps.json
+D:\Johnny\C#\HotelUnad\HotelUnad\bin\Debug\netcoreapp3.1\HotelUnad.runtimeconfig.json
+D:\Johnny\C#\HotelUnad\HotelUnad\bin\Debug\netcoreapp3.1\HotelUnad.runtimeconfig.dev.json
+D:\Johnny\C#\HotelUnad\HotelUnad\bin\Debug\netcoreapp3.1\HotelUnad.dll
+D:\Johnny\C#\HotelUnad\HotelUnad\bin\Debug\netcoreapp3.1\HotelUnad.pdb
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.Container.resources
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.dll
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.pdb
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.genruntimeconfig.cache
+D:\Johnny\C#\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.Principal.resources
