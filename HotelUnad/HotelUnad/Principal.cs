@@ -61,10 +61,24 @@ namespace HotelUnad
 
 
         public Boolean validateStateFields() {
-            
-            Boolean status = (textBoxId.Equals("")||textBoxName.Equals("")
-                ||comboBoxGender.SelectedIndex
-                .Equals(0)||comboBoxRoom.SelectedIndex.Equals(0))?true:false;
+
+            Boolean status = false;
+
+            if (!String.IsNullOrEmpty(textBoxId.Text))
+            {
+                if (!String.IsNullOrEmpty(textBoxName.Text))
+                {
+                    status = true;
+                }
+                else
+                {
+                    status = false;
+                }
+            }
+            else {
+                status = false;
+            }
+                
             return status;
         }
 
@@ -76,18 +90,24 @@ namespace HotelUnad
                 name = textBoxName.Text;
                 gender = comboBoxGender.SelectedText;
                 typeRoom = comboBoxRoom.SelectedText;
+                MessageBox.Show("Datos Almacenados", "", MessageBoxButtons.OKCancel);
             }
             else
             {
+
                 MessageBox.Show("aun hay campos vacios","Error",MessageBoxButtons.OKCancel);
             }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            
             getPayment();
         }
 
-        
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
