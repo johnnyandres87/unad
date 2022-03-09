@@ -61,14 +61,53 @@ namespace HotelUnad
 
 
         public Boolean validateStateFields() {
-            
-            Boolean status = (getId().Equals("") || getName().Equals("") || getGender().Equals(" ")
-                || getTypeRoom().Equals(""))?true:false;
+
+            Boolean status = false;
+
+            if (!String.IsNullOrEmpty(textBoxId.Text))
+            {
+                if (!String.IsNullOrEmpty(textBoxName.Text))
+                {
+                    status = true;
+                }
+                else
+                {
+                    status = false;
+                }
+            }
+            else {
+                status = false;
+            }
+                
             return status;
         }
 
-        
+        public void getPayment() {
 
+            if (validateStateFields())
+            {
+                id = int.Parse(textBoxId.Text);
+                name = textBoxName.Text;
+                gender = comboBoxGender.SelectedText;
+                typeRoom = comboBoxRoom.SelectedText;
+                MessageBox.Show("Datos Almacenados", "", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
 
+                MessageBox.Show("aun hay campos vacios","Error",MessageBoxButtons.OKCancel);
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            
+            getPayment();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

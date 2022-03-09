@@ -191,6 +191,7 @@
             this.buttonSave.TabIndex = 15;
             this.buttonSave.Text = "Guardar";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonShow
             // 
@@ -209,6 +210,7 @@
             this.buttonExit.TabIndex = 17;
             this.buttonExit.Text = "Salir";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // Principal
             // 
