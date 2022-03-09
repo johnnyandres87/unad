@@ -88,6 +88,6 @@ namespace HotelUnad
             getPayment();
         }
 
-        //commit
+        
     }
 }
