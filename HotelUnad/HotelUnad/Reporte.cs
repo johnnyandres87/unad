@@ -89,7 +89,7 @@ namespace HotelUnad
             textBoxGenderCostume.Text = gender.ToString();
             textBoxDays.Text = days.ToString();
             textBoxTypeRoom.Text = typeRoom.ToString();
-            textBoxPayValue.Text = payValue.ToString();
+            textBoxPayValue.Text = "$"+payValue.ToString();
         }
 
         public void cleanWindow() {
