@@ -12,13 +12,15 @@ namespace HotelUnad
     public partial class Principal : Form
     {
 
-        Estadia objEstadia = new Estadia();
-        ArrayList myArray = new ArrayList();
+        
+        Reporte objReporte = new Reporte();
+        List<Estadia> myList;
 
         private int id;
         private string name;
         private string gender;
         private string typeRoom;
+       
 
         public Principal()
         {
@@ -75,41 +77,63 @@ namespace HotelUnad
             return status;
         }
 
-        public void getPayment()
+        public Estadia getEstadia()
         {
 
             if (validateStateFields())
             {
+                
+                Estadia objEstadia = new Estadia();
                 id = int.Parse(textBoxId.Text);
                 name = textBoxName.Text;
-                gender = comboBoxGender.SelectedText;
-                typeRoom = comboBoxRoom.SelectedText;
+                gender = comboBoxGender.SelectedItem.ToString();
+                typeRoom = comboBoxRoom.SelectedItem.ToString();
                 DateTime dateIn = dateTimePickerIn.Value.Date;
                 DateTime dateOut = dateTimePickerOut.Value.Date;
                 TimeSpan timeSpan = dateOut - dateIn;
                 int difDates = timeSpan.Days;
+                int payValueRoom = int.Parse(textBoxValue.Text);
+                double totalPayLocal = objEstadia.calculatePay(difDates,payValueRoom);
 
-                objEstadia.calculatePay(int.Parse(textBoxValue.Text),difDates);
+                objEstadia.TotalPay = totalPayLocal;
                 objEstadia.FullName = name;
                 objEstadia.IdUser = id;
                 objEstadia.TypeRoom = typeRoom;
-                myArray.Add(objEstadia);
+                objEstadia.GenderUser = gender;
+                objEstadia.StayDays = difDates;
+                objEstadia.PayValue = payValueRoom;
 
-                MessageBox.Show("Datos Almacenados " + "dateIn "+ dateIn +
-                    " dateOut "+ dateOut + " Total dias " + timeSpan, "", MessageBoxButtons.OKCancel);
-            }
+                return objEstadia;
+                
+                }
             else
             {
 
                 MessageBox.Show("aun hay campos vacios", "Error", MessageBoxButtons.OKCancel);
+                return null;
             }
+        }
+
+        
+
+        public void setVisible(Estadia objEstadia)
+        {
+            objReporte.setName(objEstadia.FullName);
+            objReporte.setId(objEstadia.IdUser);
+            objReporte.setTypeRoom(objEstadia.TypeRoom);
+            objReporte.setGender(objEstadia.GenderUser);
+            objReporte.setDays(objEstadia.StayDays);
+            objReporte.setPayValue(objEstadia.TotalPay);
+            objReporte.addInfo();
+            objReporte.Visible = true;
+
         }
 
        
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            getPayment();
+            getEstadia();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -147,7 +171,7 @@ namespace HotelUnad
 
         private void buttonShow_Click(object sender, EventArgs e)
         {
-            
+            setVisible(getEstadia());
         }
     }
 }
