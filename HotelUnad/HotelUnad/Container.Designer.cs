@@ -58,6 +58,7 @@
             // 
             // textBoxPassword
             // 
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPassword.Location = new System.Drawing.Point(198, 76);
             this.textBoxPassword.MaxLength = 3;
             this.textBoxPassword.Name = "textBoxPassword";
@@ -79,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 152);
+            this.ClientSize = new System.Drawing.Size(577, 142);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelPassword);

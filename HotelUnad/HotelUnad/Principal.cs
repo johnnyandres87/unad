@@ -27,43 +27,35 @@ namespace HotelUnad
             InitializeComponent();
         }
 
-        public int getId()
-        {
+        public int getId(){
             return id;
         }
 
-        public void setId(int id)
-        {
+        public void setId(int id){
             this.id = id;
         }
 
-        public string getName()
-        {
+        public string getName(){
             return name;
         }
 
-        public void setName(String name)
-        {
+        public void setName(String name){
             this.name = name;
         }
 
-        public string getGender()
-        {
+        public string getGender(){
             return gender;
         }
 
-        public void setGender(string gender)
-        {
+        public void setGender(string gender){
             this.gender = gender;
         }
 
-        public String getTypeRoom()
-        {
+        public String getTypeRoom(){
             return typeRoom;
         }
 
-        public void setTypeRoom(String typeRoom)
-        {
+        public void setTypeRoom(String typeRoom){
             this.typeRoom = typeRoom;
         }
 
@@ -77,11 +69,9 @@ namespace HotelUnad
             return status;
         }
 
-        public Estadia getEstadia()
-        {
+        public Estadia getEstadia(){
 
-            if (validateStateFields())
-            {
+            if (validateStateFields()){
                 
                 Estadia objEstadia = new Estadia();
                 id = int.Parse(textBoxId.Text);
@@ -125,53 +115,68 @@ namespace HotelUnad
             objReporte.setDays(objEstadia.StayDays);
             objReporte.setPayValue(objEstadia.TotalPay);
             objReporte.addInfo();
-            objReporte.Visible = true;
-
+            
         }
 
-       
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            getEstadia();
+        public void cleanWindow(){
+            textBoxId.Text = "";
+            textBoxName.Text = "";
+            comboBoxGender.SelectedIndex = 0;
+            comboBoxRoom.SelectedIndex = 0;
+            textBoxValue.Text = "";
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        public void getValueRooms(Object obj , EventArgs e) {
 
-        private void comboBoxRoom_SelectedIndexChanged(object sender, EventArgs e)
-        {
             int sencilla = 70000;
             int doble = 90000;
             int especial = 120000;
 
-            if (comboBoxRoom.SelectedIndex == 1)
-            {
+            if (comboBoxRoom.SelectedIndex == 1){
 
-                textBoxValue.Text =sencilla.ToString();
-            }
-            else if (comboBoxRoom.SelectedIndex == 2)
-            {
+                textBoxValue.Text = sencilla.ToString();
+            }else if (comboBoxRoom.SelectedIndex == 2){
 
-                textBoxValue.Text =doble.ToString();
-            }
-            else if (comboBoxRoom.SelectedIndex == 3)
-            {
+                textBoxValue.Text = doble.ToString();
+            }else if (comboBoxRoom.SelectedIndex == 3){
 
-                textBoxValue.Text =especial.ToString();
-            }
-            else if (comboBoxRoom.SelectedIndex == 0)
-            {
+                textBoxValue.Text = especial.ToString();
+            }else if (comboBoxRoom.SelectedIndex == 0){
 
                 textBoxValue.Text = " ";
             }
+
         }
 
-        private void buttonShow_Click(object sender, EventArgs e)
-        {
+        private void buttonSave_Click(object sender, EventArgs e){
+            getEstadia();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e){
+            Application.Exit();
+        }
+
+        private void comboBoxRoom_SelectedIndexChanged(object sender, EventArgs e){
+            getValueRooms(sender, e);
+        }
+
+        private void buttonShow_Click(object sender, EventArgs e){
             setVisible(getEstadia());
+            objReporte.Visible = true;
+            cleanWindow();
+        }
+
+        private void textBoxId_KeyPress(object sender, KeyPressEventArgs e){
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

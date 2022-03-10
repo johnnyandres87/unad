@@ -19,8 +19,18 @@ namespace HotelUnad
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            Principal objPrincipal = new Principal();
-            objPrincipal.Visible = true;
+            Boolean status = textBoxPassword.Text.Equals("123")?true:false;
+
+            if (status){
+                Principal objPrincipal = new Principal();
+                objPrincipal.Visible = true;
+                textBoxPassword.Text = "";
+                               
+            }
+            else{
+                MessageBox.Show("Clave incorrecta", "Advertencia",MessageBoxButtons.OK);
+                textBoxPassword.Text = "";
+            }
            
         }
     }

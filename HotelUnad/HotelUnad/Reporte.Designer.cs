@@ -73,6 +73,7 @@
             // 
             // textBoxCustomer
             // 
+            this.textBoxCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxCustomer.Location = new System.Drawing.Point(181, 89);
             this.textBoxCustomer.Name = "textBoxCustomer";
             this.textBoxCustomer.ReadOnly = true;
@@ -90,6 +91,7 @@
             // 
             // textBoxIdCustomer
             // 
+            this.textBoxIdCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxIdCustomer.Location = new System.Drawing.Point(392, 89);
             this.textBoxIdCustomer.Name = "textBoxIdCustomer";
             this.textBoxIdCustomer.ReadOnly = true;
@@ -107,6 +109,7 @@
             // 
             // textBoxGenderCostume
             // 
+            this.textBoxGenderCostume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxGenderCostume.Location = new System.Drawing.Point(632, 89);
             this.textBoxGenderCostume.Name = "textBoxGenderCostume";
             this.textBoxGenderCostume.ReadOnly = true;
@@ -124,6 +127,7 @@
             // 
             // textBoxDays
             // 
+            this.textBoxDays.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDays.Location = new System.Drawing.Point(241, 154);
             this.textBoxDays.Name = "textBoxDays";
             this.textBoxDays.ReadOnly = true;
@@ -141,6 +145,7 @@
             // 
             // textBoxTypeRoom
             // 
+            this.textBoxTypeRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTypeRoom.Location = new System.Drawing.Point(483, 154);
             this.textBoxTypeRoom.Name = "textBoxTypeRoom";
             this.textBoxTypeRoom.ReadOnly = true;
@@ -165,6 +170,7 @@
             this.buttonBack.TabIndex = 13;
             this.buttonBack.Text = "Regresar";
             this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // Reporte
             // 
