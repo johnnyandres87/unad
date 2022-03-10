@@ -32,8 +32,7 @@ namespace HotelUnad
 
         public Double calculatePay(int stayDays, double payValue) {
 
-            double totalPay=0;
-
+            double totalPay=stayDays*payValue;
             return totalPay;
         }
     }
