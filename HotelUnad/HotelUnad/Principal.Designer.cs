@@ -70,7 +70,7 @@
             // labelId
             // 
             this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(30, 68);
+            this.labelId.Location = new System.Drawing.Point(43, 68);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(21, 15);
             this.labelId.TabIndex = 2;
@@ -87,14 +87,16 @@
             // 
             // textBoxId
             // 
-            this.textBoxId.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxId.Location = new System.Drawing.Point(57, 65);
+            this.textBoxId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxId.Location = new System.Drawing.Point(70, 65);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(144, 16);
+            this.textBoxId.Size = new System.Drawing.Size(144, 23);
             this.textBoxId.TabIndex = 4;
+            this.textBoxId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxId_KeyPress);
             // 
             // textBoxName
             // 
+            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxName.Location = new System.Drawing.Point(356, 65);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(193, 23);
@@ -102,6 +104,7 @@
             // 
             // comboBoxGender
             // 
+            this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGender.FormattingEnabled = true;
             this.comboBoxGender.Items.AddRange(new object[] {
             " ",
@@ -123,6 +126,7 @@
             // 
             // comboBoxRoom
             // 
+            this.comboBoxRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoom.FormattingEnabled = true;
             this.comboBoxRoom.Items.AddRange(new object[] {
             " ",
@@ -133,6 +137,7 @@
             this.comboBoxRoom.Name = "comboBoxRoom";
             this.comboBoxRoom.Size = new System.Drawing.Size(104, 23);
             this.comboBoxRoom.TabIndex = 8;
+            this.comboBoxRoom.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoom_SelectedIndexChanged);
             // 
             // labelCheckIn
             // 
@@ -177,8 +182,9 @@
             // 
             // textBoxValue
             // 
+            this.textBoxValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxValue.Enabled = false;
-            this.textBoxValue.Location = new System.Drawing.Point(337, 145);
+            this.textBoxValue.Location = new System.Drawing.Point(356, 145);
             this.textBoxValue.Name = "textBoxValue";
             this.textBoxValue.Size = new System.Drawing.Size(193, 23);
             this.textBoxValue.TabIndex = 14;
@@ -201,6 +207,7 @@
             this.buttonShow.TabIndex = 16;
             this.buttonShow.Text = "Calcular/Mostrar";
             this.buttonShow.UseVisualStyleBackColor = true;
+            this.buttonShow.Click += new System.EventHandler(this.buttonShow_Click);
             // 
             // buttonExit
             // 

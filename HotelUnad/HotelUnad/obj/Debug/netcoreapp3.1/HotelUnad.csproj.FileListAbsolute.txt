@@ -32,3 +32,4 @@ D:\Johnny\C#\unad\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.csproj.C
 D:\Johnny\C#\unad\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.dll
 D:\Johnny\C#\unad\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.pdb
 D:\Johnny\C#\unad\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.genruntimeconfig.cache
+D:\Johnny\C#\unad\HotelUnad\HotelUnad\obj\Debug\netcoreapp3.1\HotelUnad.Reporte.resources

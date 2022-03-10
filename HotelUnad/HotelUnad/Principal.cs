@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,103 +12,171 @@ namespace HotelUnad
     public partial class Principal : Form
     {
 
-        Estadia objEstadia = new Estadia();
         
+        Reporte objReporte = new Reporte();
+        List<Estadia> myList;
+
         private int id;
         private string name;
         private string gender;
         private string typeRoom;
-        
+       
+
         public Principal()
         {
             InitializeComponent();
         }
 
-        public int getId()
-        {
+        public int getId(){
             return id;
         }
 
-        public void setId(int id) {
+        public void setId(int id){
             this.id = id;
         }
 
-        public string getName() { 
+        public string getName(){
             return name;
         }
 
-        public void setName(String name)
-        {
+        public void setName(String name){
             this.name = name;
         }
 
-        public string getGender()
-        {
+        public string getGender(){
             return gender;
         }
 
-        public void setGender(string gender) { 
+        public void setGender(string gender){
             this.gender = gender;
         }
 
-        public String getTypeRoom() { 
+        public String getTypeRoom(){
             return typeRoom;
         }
 
-        public void setTypeRoom(String typeRoom)
-        {
+        public void setTypeRoom(String typeRoom){
             this.typeRoom = typeRoom;
         }
 
 
-        public Boolean validateStateFields() {
+        public Boolean validateStateFields(){
 
-            Boolean status = false;
+            Boolean status = ((!String.IsNullOrEmpty(textBoxId.Text)) &&
+                (!String.IsNullOrEmpty(textBoxName.Text)) && (!String.IsNullOrEmpty(comboBoxGender.Text))
+                && (!String.IsNullOrEmpty(comboBoxRoom.Text)))?true:false;
 
-            if (!String.IsNullOrEmpty(textBoxId.Text))
-            {
-                if (!String.IsNullOrEmpty(textBoxName.Text))
-                {
-                    status = true;
-                }
-                else
-                {
-                    status = false;
-                }
-            }
-            else {
-                status = false;
-            }
-                
             return status;
         }
 
-        public void getPayment() {
+        public Estadia getEstadia(){
 
-            if (validateStateFields())
-            {
+            if (validateStateFields()){
+                
+                Estadia objEstadia = new Estadia();
                 id = int.Parse(textBoxId.Text);
                 name = textBoxName.Text;
-                gender = comboBoxGender.SelectedText;
-                typeRoom = comboBoxRoom.SelectedText;
-                MessageBox.Show("Datos Almacenados", "", MessageBoxButtons.OKCancel);
-            }
+                gender = comboBoxGender.SelectedItem.ToString();
+                typeRoom = comboBoxRoom.SelectedItem.ToString();
+                DateTime dateIn = dateTimePickerIn.Value.Date;
+                DateTime dateOut = dateTimePickerOut.Value.Date;
+                TimeSpan timeSpan = dateOut - dateIn;
+                int difDates = timeSpan.Days;
+                int payValueRoom = int.Parse(textBoxValue.Text);
+                double totalPayLocal = objEstadia.calculatePay(difDates,payValueRoom);
+
+                objEstadia.TotalPay = totalPayLocal;
+                objEstadia.FullName = name;
+                objEstadia.IdUser = id;
+                objEstadia.TypeRoom = typeRoom;
+                objEstadia.GenderUser = gender;
+                objEstadia.StayDays = difDates;
+                objEstadia.PayValue = payValueRoom;
+
+                return objEstadia;
+                
+                }
             else
             {
 
-                MessageBox.Show("aun hay campos vacios","Error",MessageBoxButtons.OKCancel);
+                MessageBox.Show("aun hay campos vacios", "Error", MessageBoxButtons.OKCancel);
+                return null;
             }
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        
+
+        public void setVisible(Estadia objEstadia)
         {
+            objReporte.setName(objEstadia.FullName);
+            objReporte.setId(objEstadia.IdUser);
+            objReporte.setTypeRoom(objEstadia.TypeRoom);
+            objReporte.setGender(objEstadia.GenderUser);
+            objReporte.setDays(objEstadia.StayDays);
+            objReporte.setPayValue(objEstadia.TotalPay);
+            objReporte.addInfo();
             
-            getPayment();
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
+        public void cleanWindow(){
+            textBoxId.Text = "";
+            textBoxName.Text = "";
+            comboBoxGender.SelectedIndex = 0;
+            comboBoxRoom.SelectedIndex = 0;
+            textBoxValue.Text = "";
+        }
+
+        public void getValueRooms(Object obj , EventArgs e) {
+
+            int sencilla = 70000;
+            int doble = 90000;
+            int especial = 120000;
+
+            if (comboBoxRoom.SelectedIndex == 1){
+
+                textBoxValue.Text = sencilla.ToString();
+            }else if (comboBoxRoom.SelectedIndex == 2){
+
+                textBoxValue.Text = doble.ToString();
+            }else if (comboBoxRoom.SelectedIndex == 3){
+
+                textBoxValue.Text = especial.ToString();
+            }else if (comboBoxRoom.SelectedIndex == 0){
+
+                textBoxValue.Text = " ";
+            }
+
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e){
+            getEstadia();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e){
             Application.Exit();
+        }
+
+        private void comboBoxRoom_SelectedIndexChanged(object sender, EventArgs e){
+            getValueRooms(sender, e);
+        }
+
+        private void buttonShow_Click(object sender, EventArgs e){
+            setVisible(getEstadia());
+            objReporte.Visible = true;
+            cleanWindow();
+        }
+
+        private void textBoxId_KeyPress(object sender, KeyPressEventArgs e){
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
