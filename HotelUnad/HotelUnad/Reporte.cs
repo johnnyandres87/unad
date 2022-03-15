@@ -17,22 +17,25 @@ namespace HotelUnad
         private int days;
         private String typeRoom;
         private double payValue;
+        private DateTime dateIngress;
 
-        public Reporte(String name, int id, String gender, int days, String typeRoom, double payValue) {
+        
 
-            this.name = name;
-            this.id = id;
-            this.gender = gender;
-            this.days = days;
-            this.typeRoom = typeRoom;
-            this.payValue = payValue;
-        }
+        
         public Reporte()
         {
             InitializeComponent();
            
         }
 
+        public DateTime getDateIngress()
+        {
+            return dateIngress;
+        }
+
+        public void setDateIngress(DateTime dateIngress) { 
+            this.dateIngress = dateIngress;
+        }
         public String getName()
         {
             return name;
@@ -90,7 +93,8 @@ namespace HotelUnad
             textBoxDays.Text = days.ToString();
             textBoxTypeRoom.Text = typeRoom.ToString();
             textBoxPayValue.Text = payValue.ToString();
-            MessageBox.Show("Datos Almacenados exitosamente","Datos",MessageBoxButtons.OK);
+            textBoxDate.Text = dateIngress.ToString();
+            
         }
 
         public void cleanWindow() {
@@ -100,6 +104,7 @@ namespace HotelUnad
             textBoxDays.Text = "";
             textBoxTypeRoom.Text = "";
             textBoxPayValue.Text = "";
+            textBoxDate.Text = "";
         }
         private void buttonBack_Click(object sender, EventArgs e)
         {

@@ -37,8 +37,6 @@
             this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.labelTypeRoom = new System.Windows.Forms.Label();
             this.comboBoxRoom = new System.Windows.Forms.ComboBox();
-            this.labelCheckIn = new System.Windows.Forms.Label();
-            this.dateTimePickerIn = new System.Windows.Forms.DateTimePicker();
             this.labelCheckOut = new System.Windows.Forms.Label();
             this.dateTimePickerOut = new System.Windows.Forms.DateTimePicker();
             this.labelValue = new System.Windows.Forms.Label();
@@ -139,26 +137,10 @@
             this.comboBoxRoom.TabIndex = 8;
             this.comboBoxRoom.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoom_SelectedIndexChanged);
             // 
-            // labelCheckIn
-            // 
-            this.labelCheckIn.AutoSize = true;
-            this.labelCheckIn.Location = new System.Drawing.Point(30, 219);
-            this.labelCheckIn.Name = "labelCheckIn";
-            this.labelCheckIn.Size = new System.Drawing.Size(96, 15);
-            this.labelCheckIn.TabIndex = 9;
-            this.labelCheckIn.Text = "Fecha de ingreso";
-            // 
-            // dateTimePickerIn
-            // 
-            this.dateTimePickerIn.Location = new System.Drawing.Point(132, 216);
-            this.dateTimePickerIn.Name = "dateTimePickerIn";
-            this.dateTimePickerIn.Size = new System.Drawing.Size(212, 23);
-            this.dateTimePickerIn.TabIndex = 10;
-            // 
             // labelCheckOut
             // 
             this.labelCheckOut.AutoSize = true;
-            this.labelCheckOut.Location = new System.Drawing.Point(356, 219);
+            this.labelCheckOut.Location = new System.Drawing.Point(43, 216);
             this.labelCheckOut.Name = "labelCheckOut";
             this.labelCheckOut.Size = new System.Drawing.Size(72, 15);
             this.labelCheckOut.TabIndex = 11;
@@ -166,7 +148,7 @@
             // 
             // dateTimePickerOut
             // 
-            this.dateTimePickerOut.Location = new System.Drawing.Point(434, 216);
+            this.dateTimePickerOut.Location = new System.Drawing.Point(125, 210);
             this.dateTimePickerOut.Name = "dateTimePickerOut";
             this.dateTimePickerOut.Size = new System.Drawing.Size(212, 23);
             this.dateTimePickerOut.TabIndex = 12;
@@ -231,8 +213,6 @@
             this.Controls.Add(this.labelValue);
             this.Controls.Add(this.dateTimePickerOut);
             this.Controls.Add(this.labelCheckOut);
-            this.Controls.Add(this.dateTimePickerIn);
-            this.Controls.Add(this.labelCheckIn);
             this.Controls.Add(this.comboBoxRoom);
             this.Controls.Add(this.labelTypeRoom);
             this.Controls.Add(this.comboBoxGender);
@@ -262,8 +242,6 @@
         private System.Windows.Forms.ComboBox comboBoxGender;
         private System.Windows.Forms.Label labelTypeRoom;
         private System.Windows.Forms.ComboBox comboBoxRoom;
-        private System.Windows.Forms.Label labelCheckIn;
-        private System.Windows.Forms.DateTimePicker dateTimePickerIn;
         private System.Windows.Forms.Label labelCheckOut;
         private System.Windows.Forms.DateTimePicker dateTimePickerOut;
         private System.Windows.Forms.Label labelValue;

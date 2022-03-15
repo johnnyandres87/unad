@@ -13,6 +13,7 @@ namespace HotelUnad
 		private int stayDays;
 		private double payValue;
         private double totalPay;
+        private DateTime dateIngress;
         
         public Estadia(String fullName, int idUser, String genderUser, String typeRoom, int stayDays) { 
             this.fullName = fullName;
@@ -32,6 +33,7 @@ namespace HotelUnad
         public int StayDays { get => stayDays; set => stayDays = value; }
         public double PayValue { get => payValue; set => payValue = value; }
         public double TotalPay { get => totalPay; set => totalPay = value; }
+        public DateTime DateIngress { get => dateIngress; set => dateIngress = value; }
 
         public Double calculatePay(int stayDays, double payValue) {
 

@@ -78,7 +78,7 @@ namespace HotelUnad
                 name = textBoxName.Text;
                 gender = comboBoxGender.SelectedItem.ToString();
                 typeRoom = comboBoxRoom.SelectedItem.ToString();
-                DateTime dateIn = dateTimePickerIn.Value.Date;
+                DateTime dateIn = DateTime.Now;
                 DateTime dateOut = dateTimePickerOut.Value.Date;
                 TimeSpan timeSpan = dateOut - dateIn;
                 int difDates = timeSpan.Days;
@@ -92,6 +92,7 @@ namespace HotelUnad
                 objEstadia.GenderUser = gender;
                 objEstadia.StayDays = difDates;
                 objEstadia.PayValue = payValueRoom;
+                objEstadia.DateIngress = dateIn;
 
                 return objEstadia;
                 
@@ -114,6 +115,7 @@ namespace HotelUnad
             objReporte.setGender(objEstadia.GenderUser);
             objReporte.setDays(objEstadia.StayDays);
             objReporte.setPayValue(objEstadia.TotalPay);
+            objReporte.setDateIngress(objEstadia.DateIngress);
             objReporte.addInfo();
             
         }
@@ -150,10 +152,15 @@ namespace HotelUnad
 
         private void buttonSave_Click(object sender, EventArgs e){
             getEstadia();
+            MessageBox.Show("Datos Almacenados exitosamente", "Datos", MessageBoxButtons.OK);
         }
 
         private void buttonExit_Click(object sender, EventArgs e){
-            Application.Exit();
+            DialogResult msj = MessageBox.Show("Desea salir de la aplicacion?", "Warning", MessageBoxButtons.OKCancel);
+            if (msj == DialogResult.OK) {
+
+                Application.Exit();
+            }
         }
 
         private void comboBoxRoom_SelectedIndexChanged(object sender, EventArgs e){
