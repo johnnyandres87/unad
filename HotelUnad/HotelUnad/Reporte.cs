@@ -90,6 +90,7 @@ namespace HotelUnad
             textBoxDays.Text = days.ToString();
             textBoxTypeRoom.Text = typeRoom.ToString();
             textBoxPayValue.Text = payValue.ToString();
+            MessageBox.Show("Datos Almacenados exitosamente","Datos",MessageBoxButtons.OK);
         }
 
         public void cleanWindow() {

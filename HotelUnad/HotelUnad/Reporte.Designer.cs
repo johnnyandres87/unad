@@ -42,6 +42,8 @@
             this.textBoxTypeRoom = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.labelDateIngress = new System.Windows.Forms.Label();
+            this.textBoxDate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelPayValue
@@ -172,11 +174,30 @@
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // labelDateIngress
+            // 
+            this.labelDateIngress.AutoSize = true;
+            this.labelDateIngress.Location = new System.Drawing.Point(136, 213);
+            this.labelDateIngress.Name = "labelDateIngress";
+            this.labelDateIngress.Size = new System.Drawing.Size(80, 15);
+            this.labelDateIngress.TabIndex = 14;
+            this.labelDateIngress.Text = "Fecha ingreso";
+            // 
+            // textBoxDate
+            // 
+            this.textBoxDate.Location = new System.Drawing.Point(241, 210);
+            this.textBoxDate.Name = "textBoxDate";
+            this.textBoxDate.ReadOnly = true;
+            this.textBoxDate.Size = new System.Drawing.Size(91, 23);
+            this.textBoxDate.TabIndex = 15;
+            // 
             // Reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 317);
+            this.Controls.Add(this.textBoxDate);
+            this.Controls.Add(this.labelDateIngress);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxTypeRoom);
@@ -215,5 +236,7 @@
         private System.Windows.Forms.TextBox textBoxTypeRoom;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Label labelDateIngress;
+        private System.Windows.Forms.TextBox textBoxDate;
     }
 }
