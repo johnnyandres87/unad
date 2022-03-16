@@ -18,6 +18,7 @@ namespace HotelUnad
         private String typeRoom;
         private double payValue;
         private DateTime dateIngress;
+        private double payRoom;
 
         
 
@@ -26,6 +27,14 @@ namespace HotelUnad
         {
             InitializeComponent();
            
+        }
+
+        public double getPayRoom() {
+            return payRoom;
+         }
+
+        public void setPayRoom(double payRoom) {
+            this.payRoom = payRoom;
         }
 
         public DateTime getDateIngress()
@@ -92,8 +101,9 @@ namespace HotelUnad
             textBoxGenderCostume.Text = gender.ToString();
             textBoxDays.Text = days.ToString();
             textBoxTypeRoom.Text = typeRoom.ToString();
-            textBoxPayValue.Text = payValue.ToString();
+            textBoxPayValue.Text = "$"+payValue.ToString();
             textBoxDate.Text = dateIngress.ToString();
+            textBoxPayRoom.Text ="$"+ payRoom.ToString();
             
         }
 

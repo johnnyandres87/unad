@@ -93,7 +93,6 @@ namespace HotelUnad
                 objEstadia.StayDays = difDates;
                 objEstadia.PayValue = payValueRoom;
                 objEstadia.DateIngress = dateIn;
-
                 return objEstadia;
                 
                 }
@@ -116,6 +115,7 @@ namespace HotelUnad
             objReporte.setDays(objEstadia.StayDays);
             objReporte.setPayValue(objEstadia.TotalPay);
             objReporte.setDateIngress(objEstadia.DateIngress);
+            objReporte.setPayRoom(objEstadia.PayValue);
             objReporte.addInfo();
             
         }

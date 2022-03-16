@@ -44,12 +44,14 @@
             this.buttonBack = new System.Windows.Forms.Button();
             this.labelDateIngress = new System.Windows.Forms.Label();
             this.textBoxDate = new System.Windows.Forms.TextBox();
+            this.labelValuePayRoom = new System.Windows.Forms.Label();
+            this.textBoxPayRoom = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelPayValue
             // 
             this.labelPayValue.AutoSize = true;
-            this.labelPayValue.Location = new System.Drawing.Point(551, 221);
+            this.labelPayValue.Location = new System.Drawing.Point(592, 221);
             this.labelPayValue.Name = "labelPayValue";
             this.labelPayValue.Size = new System.Drawing.Size(75, 15);
             this.labelPayValue.TabIndex = 0;
@@ -58,16 +60,16 @@
             // textBoxPayValue
             // 
             this.textBoxPayValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxPayValue.Location = new System.Drawing.Point(641, 213);
+            this.textBoxPayValue.Location = new System.Drawing.Point(673, 213);
             this.textBoxPayValue.Name = "textBoxPayValue";
             this.textBoxPayValue.ReadOnly = true;
-            this.textBoxPayValue.Size = new System.Drawing.Size(142, 23);
+            this.textBoxPayValue.Size = new System.Drawing.Size(151, 23);
             this.textBoxPayValue.TabIndex = 1;
             // 
             // labelNameClient
             // 
             this.labelNameClient.AutoSize = true;
-            this.labelNameClient.Location = new System.Drawing.Point(101, 88);
+            this.labelNameClient.Location = new System.Drawing.Point(49, 91);
             this.labelNameClient.Name = "labelNameClient";
             this.labelNameClient.Size = new System.Drawing.Size(47, 15);
             this.labelNameClient.TabIndex = 2;
@@ -76,7 +78,7 @@
             // textBoxCustomer
             // 
             this.textBoxCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxCustomer.Location = new System.Drawing.Point(154, 86);
+            this.textBoxCustomer.Location = new System.Drawing.Point(121, 90);
             this.textBoxCustomer.Name = "textBoxCustomer";
             this.textBoxCustomer.ReadOnly = true;
             this.textBoxCustomer.Size = new System.Drawing.Size(220, 23);
@@ -85,7 +87,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(384, 91);
+            this.label1.Location = new System.Drawing.Point(353, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 15);
             this.label1.TabIndex = 4;
@@ -94,7 +96,7 @@
             // textBoxIdCustomer
             // 
             this.textBoxIdCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxIdCustomer.Location = new System.Drawing.Point(411, 90);
+            this.textBoxIdCustomer.Location = new System.Drawing.Point(384, 89);
             this.textBoxIdCustomer.Name = "textBoxIdCustomer";
             this.textBoxIdCustomer.ReadOnly = true;
             this.textBoxIdCustomer.Size = new System.Drawing.Size(151, 23);
@@ -103,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(578, 94);
+            this.label2.Location = new System.Drawing.Point(619, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 15);
             this.label2.TabIndex = 6;
@@ -112,7 +114,7 @@
             // textBoxGenderCostume
             // 
             this.textBoxGenderCostume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxGenderCostume.Location = new System.Drawing.Point(632, 89);
+            this.textBoxGenderCostume.Location = new System.Drawing.Point(673, 86);
             this.textBoxGenderCostume.Name = "textBoxGenderCostume";
             this.textBoxGenderCostume.ReadOnly = true;
             this.textBoxGenderCostume.Size = new System.Drawing.Size(151, 23);
@@ -121,7 +123,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 157);
+            this.label3.Location = new System.Drawing.Point(12, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 15);
             this.label3.TabIndex = 8;
@@ -130,7 +132,7 @@
             // textBoxDays
             // 
             this.textBoxDays.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxDays.Location = new System.Drawing.Point(154, 154);
+            this.textBoxDays.Location = new System.Drawing.Point(121, 152);
             this.textBoxDays.Name = "textBoxDays";
             this.textBoxDays.ReadOnly = true;
             this.textBoxDays.Size = new System.Drawing.Size(53, 23);
@@ -177,7 +179,7 @@
             // labelDateIngress
             // 
             this.labelDateIngress.AutoSize = true;
-            this.labelDateIngress.Location = new System.Drawing.Point(49, 210);
+            this.labelDateIngress.Location = new System.Drawing.Point(31, 210);
             this.labelDateIngress.Name = "labelDateIngress";
             this.labelDateIngress.Size = new System.Drawing.Size(80, 15);
             this.labelDateIngress.TabIndex = 14;
@@ -185,17 +187,37 @@
             // 
             // textBoxDate
             // 
-            this.textBoxDate.Location = new System.Drawing.Point(154, 207);
+            this.textBoxDate.Location = new System.Drawing.Point(121, 202);
             this.textBoxDate.Name = "textBoxDate";
             this.textBoxDate.ReadOnly = true;
             this.textBoxDate.Size = new System.Drawing.Size(173, 23);
             this.textBoxDate.TabIndex = 15;
+            // 
+            // labelValuePayRoom
+            // 
+            this.labelValuePayRoom.AutoSize = true;
+            this.labelValuePayRoom.Location = new System.Drawing.Point(551, 156);
+            this.labelValuePayRoom.Name = "labelValuePayRoom";
+            this.labelValuePayRoom.Size = new System.Drawing.Size(116, 15);
+            this.labelValuePayRoom.TabIndex = 16;
+            this.labelValuePayRoom.Text = "Costo de habitacion:";
+            // 
+            // textBoxPayRoom
+            // 
+            this.textBoxPayRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPayRoom.Location = new System.Drawing.Point(673, 149);
+            this.textBoxPayRoom.Name = "textBoxPayRoom";
+            this.textBoxPayRoom.ReadOnly = true;
+            this.textBoxPayRoom.Size = new System.Drawing.Size(151, 23);
+            this.textBoxPayRoom.TabIndex = 17;
             // 
             // Reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 317);
+            this.Controls.Add(this.textBoxPayRoom);
+            this.Controls.Add(this.labelValuePayRoom);
             this.Controls.Add(this.textBoxDate);
             this.Controls.Add(this.labelDateIngress);
             this.Controls.Add(this.buttonBack);
@@ -238,5 +260,7 @@
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label labelDateIngress;
         private System.Windows.Forms.TextBox textBoxDate;
+        private System.Windows.Forms.Label labelValuePayRoom;
+        private System.Windows.Forms.TextBox textBoxPayRoom;
     }
 }
